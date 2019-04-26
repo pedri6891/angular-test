@@ -1,0 +1,69 @@
+<section class="obras-create">
+  <form [formGroup]="obra" (ngSubmit)="save()">
+    <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" formControlName="nombre" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" />
+        <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+            <div *ngIf="f.nombre.errors.required">Por favor, ingresa el Nombre</div>
+        </div>
+    </div>
+    <div class="form-group">
+      <label>Año de Inicio</label>
+      <input type="text" formControlName="annoinicio" [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" />
+      <div *ngIf="submitted && f.annoinicio.errors" class="invalid-feedback">
+        <div *ngIf="f.annoinicio.errors.required">Por favor, ingresa en año de inicio</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Año de Fin</label>
+      <input type="text" formControlName="annofin" [ngClass]="{ 'is-invalid': submitted && f.annofin.errors }" />
+      <div *ngIf="submitted && f.annofin.errors" class="invalid-feedback">
+        <div *ngIf="f.annofin.errors.required">Por favor, ingresa el anño de fin</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Monto de inversion</label>
+      <input type="text" formControlName="montoinversion" [ngClass]="{ 'is-invalid': submitted && f.montoinversion.errors }" />
+      <div *ngIf="submitted && f.montoinversion.errors" class="invalid-feedback">
+        <div *ngIf="f.montoinversion.errors.required">Por favor, ingresa el monto de inversion</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Longitud</label>
+      <input type="text" formControlName="longitud" [ngClass]="{ 'is-invalid': submitted && f.longitud.errors }" />
+      <div *ngIf="submitted && f.longitud.errors" class="invalid-feedback">
+        <div *ngIf="f.longitud.errors.required">Por favor, ingresa la longitud</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Transito diario</label>
+      <input type="text" formControlName="transitodiarioestimado" [ngClass]="{ 'is-invalid': submitted && f.transitodiarioestimado.errors }" />
+      <div *ngIf="submitted && f.transitodiarioestimado.errors" class="invalid-feedback">
+        <div *ngIf="f.transitodiarioestimado.errors.required">Por favor, ingresa el tralado diario</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Tempo tras. anterior</label>
+      <input type="text" formControlName="tiempotrasladoanterior" [ngClass]="{ 'is-invalid': submitted && f.tiempotrasladoanterior.errors }" />
+      <div *ngIf="submitted && f.tiempotrasladoanterior.errors" class="invalid-feedback">
+        <div *ngIf="f.tiempotrasladoanterior.errors.required">Por favor, ingresa el traslado anterior</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Transito diario</label>
+      <input type="text" formControlName="tiempotrasladoactual" [ngClass]="{ 'is-invalid': submitted && f.tiempotrasladoactual.errors }" />
+      <div *ngIf="submitted && f.tiempotrasladoactual.errors" class="invalid-feedback">
+        <div *ngIf="f.tiempotrasladoactual.errors.required">Por favor, ingresa el traslado actual</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Fecha de entrega</label>
+      <input type="date" formControlName="fechaentrega"/>
+    </div>
+    <div class="form-group in-rows">
+      <button class="btn-primary">Aceptar</button>
+      <button class="btn-cancel" (click)="route.navigate(['/obras'])">Cancelar</button>
+    </div>
+  </form>
+</section>

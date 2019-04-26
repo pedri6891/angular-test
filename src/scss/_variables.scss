@@ -1,0 +1,126 @@
+// BASE COLOR
+$base-color:(
+        bg-bg-4d:                       #eceff1,
+        bg-bg-3d:                       #cfd8dc,
+        bg-bg-2d:                       #b0bec5,
+        bg-bg-1d:                       #90a4ae,
+        bg-bg-0d:                       #78909c,
+        bg-bg-0u:                       #607d8b,
+        bg-bg-1u:                       #546e7a,
+        bg-bg-2u:                       #455a64,
+        bg-bg-3u:                       #37474f,
+        bg-bg-4u:                       #263238,
+
+        bg-primary-gradient:            linear-gradient(to right , #4caf50, #30d910),
+        bg-cancel-gradient:            linear-gradient(to right , #d75440, #ff5340),
+        bg-primary-gradient-down:       linear-gradient(#7540ee,#7278fe),
+        bg-primary:                     #7540ee,
+        bg-primary-alt:                 #faf9fe,
+        bg-secondary:                   #9e9e9e,
+        bg-danger:                      #f44336,
+        bg-success:                     #4caf50,
+        bg-green-base:                  #71A447,
+        bg-green-base2:                 transparentize(#c5d8c8,.8),
+        bg-header-base:                 #F8F8F8,
+        bg-warning:                     #ffc107,
+        bg-info:                        #29b6f6,
+        //bg-light:                       #e1f5fe,
+        bg-dark:                        #0091ea,
+
+        bg-red:                         rgb(255,99,99),
+        bg-red-ultra-light:             #f2dede,
+        bg-blue:                        #1e88e5,
+        bg-blue-light:                  #29d,
+        bg-blue-ultra-light:            #d9edf7,
+        bg-blue-dark:                   #2e3e48,
+        bg-white:                       white,
+        bg-green:                       #4caf50,
+        bg-green-light:                 #7cb342,
+        bg-header-chat:                 #40a000,
+        bg-client-message:              #bcb300,
+        bg-message-chat:                #204f01,
+        bg-green-ultra-light:           #dff0d8,
+        bg-gray:                        #f0f0f0,
+        text-gray:                      #a6a6a6,
+        bg-gray-dark:                   #5b5b5b,
+        bg-gray-light:                  #f0f0f0,
+        bg-gray-blue-light:             #455a64,
+        bg-orange:                      #ff9800,
+        bg-yellow-ultra-light:          #fcf8e3,
+        bg-purple:                      #707cd2,
+        bg-pink:                        #ea4c89,
+        bg-base:                        white,
+        bg-light:                       #F6F7F9,
+        bg-light-hover:                 #F5F8FC,
+        second-bg:                      #2e3e48,
+        text:                           #234A87,
+        text-dark:                      #52537f,
+        text-light:                     #c3c3d9,
+        icon-color:                     #234A87,
+        icon-primary:                   #9970f3,
+        bg-header:                      #2F323E,
+        bg-sidebar:                     white,
+        bg-body:                        #F0F3F4,
+        bg-footer:                      white,
+        separate-line:                  #e5e9f2,
+
+        attachments:                    #f5f5f5
+
+);
+
+// FONTS CCOLORS
+$font-color:(
+    font-base:#909090,
+    sidebar:#54667a,
+    header:#FFFFFF,
+);
+
+$font-color-hover:(
+    sidebar:#f58866,
+);
+
+$font-color-active:(
+    sidebar:#F5594E,
+);
+// ALL COLOURS BUTTONS
+$btn-colors:(
+    primary: #91BC3E,
+);
+
+// ALL COLOURS TO HOVER BUTTON
+$btn-colors-hover:(
+    primary: rgba(#91BC3E,.4),
+);
+
+@function color($color){
+  @return map-get($base-color,$color)
+}
+
+
+[data-tooltip] {
+  --size-height: 25px;
+  position: relative;
+  &:hover{
+    &::after{
+      display: flex;
+    }
+  }
+  &::after {
+    content: attr(data-tooltip);
+    background: gray;
+    border-radius: 5px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 100px;
+    font-style: normal;
+    text-align: center;
+    font-size: .7em;
+    line-height: var(--size-height);
+    height: var(--size-height);
+    top: -30px;
+    position: absolute;
+    left: -50px;
+  }
+}

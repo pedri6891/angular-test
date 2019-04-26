@@ -1,0 +1,50 @@
+@import "./../../../../scss/variables";
+
+.obras-create{
+  width: 100%;
+  & > form{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    padding: 20px;
+    .form-group{
+      display: flex;
+      flex-direction: column;
+      input[type='text']{
+        width: 200px;
+        height: 30px;
+        margin-top: 3px;
+        padding: 5px;
+        border: none;
+        background: transparent;
+        border-bottom: 1px solid color(bg-green);
+        outline: none;
+      }
+      button{
+        width: 90px;
+        height: 35px;
+        border: none;
+        color: white;
+        outline: none;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+        &.btn-primary{
+          background: color(bg-primary-gradient);
+          margin-right: 15px;
+        }
+        &.btn-cancel{
+          background: color(bg-cancel-gradient);
+        }
+      }
+      .invalid-feedback{
+        color: red;
+        font-size: .7em;
+      }
+      &.in-rows{
+        flex-direction: row;
+      }
+    }
+  }
+}

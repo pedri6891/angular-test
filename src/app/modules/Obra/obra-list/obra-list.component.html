@@ -1,0 +1,37 @@
+<div class="obra-list-section">
+  <div class="create-obra">
+    <h3>Lista de Obras</h3>
+    <button (click)="addButtonClick()">+</button>
+
+
+  </div>
+  <div class="table-container">
+    <table>
+      <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Año de Inicio</th>
+        <th>Año de finalizacion</th>
+        <th>Fecha de Entrega</th>
+      </tr>
+
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of obras" (click)="showDetails(item._id)">
+        <td>{{item.nombre}}</td>
+        <td>{{item.annoinicio}}</td>
+        <td>{{item.annofin}}</td>
+        <td>{{item.fechaentrega | amDateFormat:'LL'}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="detail-container" [ngClass]="{expand: myObra!=null}">
+    <div class="top">
+      <button title="Close Details" (click)="closeDetails()">&times;</button>
+    </div>
+    <app-obra-detail *ngIf="myObra" [obra]="myObra">
+    </app-obra-detail>
+  </div>
+
+</div>
